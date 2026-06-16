@@ -12,7 +12,7 @@ export class AuthService {
 
   getIssues() {
     return this.http.get(
-      'http://localhost:3000/api/issues'
+      'https://cleanstreet-backend.onrender.com/api/issues'
     );
   }
 updateStatus(
@@ -22,7 +22,7 @@ updateStatus(
 
   return this.http.put(
 
-    `http://localhost:3000/api/issues/${id}`,
+    `https://cleanstreet-backend.onrender.com/api/issues/${id}`,
 
     {
       status
@@ -38,7 +38,7 @@ deleteIssue(
 
   return this.http.delete(
 
-    `http://localhost:3000/api/issues/${id}`
+    `https://cleanstreet-backend.onrender.com/api/issues/${id}`
 
   );
 
@@ -46,14 +46,14 @@ deleteIssue(
 
   createIssue(data: any) {
     return this.http.post(
-      'http://localhost:3000/api/issues',
+      'https://cleanstreet-backend.onrender.com/api/issues',
       data
     );
   }
 
   login(email: string, password: string) {
     return this.http.post(
-      'http://localhost:3000/api/auth/login',
+      'https://cleanstreet-backend.onrender.com/api/auth/login',
       {
         email,
         password
@@ -63,7 +63,7 @@ deleteIssue(
 
   register(data: any) {
     return this.http.post(
-      'http://localhost:3000/api/auth/register',
+      'https://cleanstreet-backend.onrender.com/api/auth/register',
       data
     );
   }
@@ -74,7 +74,7 @@ deleteIssue(
 
   return this.http.put(
 
-    `http://localhost:3000/api/issues/vote/${id}`,
+    `https://cleanstreet-backend.onrender.com/api/issues/vote/${id}`,
 
     {}
 
@@ -89,7 +89,7 @@ addComment(
 
   return this.http.put(
 
-    `http://localhost:3000/api/issues/comment/${id}`,
+    `https://cleanstreet-backend.onrender.com/api/issues/comment/${id}`,
 
     comment
 
@@ -103,7 +103,7 @@ unvoteComplaint(
 
   return this.http.put(
 
-    `http://localhost:3000/api/issues/unvote/${id}`,
+    `https://cleanstreet-backend.onrender.com/api/issues/unvote/${id}`,
 
     {
       email
@@ -123,7 +123,7 @@ deleteComment(
 
   return this.http.delete(
 
-    `http://localhost:3000/api/issues/comment/${issueId}/${index}`
+    `https://cleanstreet-backend.onrender.com/api/issues/comment/${issueId}/${index}`
 
   );
 
