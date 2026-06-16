@@ -37,7 +37,7 @@ body{
   display:grid;
 
   grid-template-columns:
-  repeat(auto-fit,minmax(420px,1fr));
+  repeat(auto-fit,minmax(320px,1fr));
 
   gap:30px;
 }
@@ -193,5 +193,86 @@ hr{
 .details-btn:hover {
 
   opacity: 0.9;
+
+}
+
+@media screen and (max-width: 768px) {
+
+  .complaints-container {
+    padding: 20px;
+  }
+
+  .heading h1 {
+    font-size: 38px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .complaints-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .complaint-image {
+    height: 220px;
+  }
+
+  .card-content {
+    padding: 20px;
+  }
+
+  .issue-title {
+    font-size: 24px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+
+  .info-row {
+    font-size: 15px;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .icon {
+    font-size: 18px;
+  }
+
+  .status {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .details-btn {
+    width: 100%;
+    padding: 12px;
+  }
+
+}
+
+@media screen and (max-width: 480px) {
+
+  .heading h1 {
+    font-size: 30px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+
+  .issue-title {
+    font-size: 20px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+
+  .complaint-image {
+    height: 180px;
+  }
 
 }
