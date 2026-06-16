@@ -1,0 +1,102 @@
+<div class="report-container">
+
+  <div class="report-card">
+
+    <h1>
+      Report an Issue 🚨
+    </h1>
+
+    <p class="subtitle">
+      Help improve your city by reporting civic issues
+    </p>
+
+    <form
+      [formGroup]="reportForm"
+      (ngSubmit)="submitIssue()"
+    >
+
+      <!-- Issue Type -->
+      <label>
+        Issue Type
+      </label>
+
+      <select
+        formControlName="issueType"
+      >
+
+        <option value="">
+          Select Issue
+        </option>
+
+        <option value="Garbage Dump">
+          Garbage Dump
+        </option>
+
+        <option value="Pothole">
+          Pothole
+        </option>
+
+        <option value="Water Leakage">
+          Water Leakage
+        </option>
+
+        <option value="Street Light Issue">
+          Street Light Issue
+        </option>
+
+        <option value="Drainage Problem">
+          Drainage Problem
+        </option>
+
+      </select>
+
+      <!-- Description -->
+      <label>
+        Description
+      </label>
+
+      <textarea
+        rows="4"
+        placeholder="Describe the issue"
+        formControlName="description"
+      ></textarea>
+
+      <!-- Location -->
+      <label>
+        Location
+      </label>
+
+      <input
+        type="text"
+        placeholder="Enter location"
+        formControlName="location"
+      >
+
+      <!-- Upload Image -->
+      <label>
+        Upload Image
+      </label>
+
+      <input
+        type="file"
+        accept="image/*"
+        (change)="onFileSelect($event)"
+      >
+
+      <!-- Image Preview -->
+      <img
+        *ngIf="imagePreview"
+        [src]="imagePreview"
+        class="image-preview"
+      />
+
+      <!-- Submit Button -->
+      <button type="submit">
+        Submit Complaint
+      </button>
+
+    </form>
+
+  </div>
+
+</div>

@@ -1,0 +1,130 @@
+<div class="complaints-container">
+
+  <div class="heading">
+
+    <h1>
+      Reported Complaints 📋
+    </h1>
+
+    <p class="subtitle">
+      View all reported civic issues
+    </p>
+
+  </div>
+
+  <div class="complaints-grid">
+
+    <div
+      class="complaint-card"
+      *ngFor="
+        let complaint
+        of complaints
+      "
+      (click)="
+        openDetails(
+          complaint
+        )
+      "
+    >
+
+      <img
+        *ngIf="
+          complaint.image
+        "
+        [src]="
+          complaint.image
+        "
+        class="complaint-image"
+      >
+
+      <div class="card-content">
+
+        <h2 class="issue-title">
+          {{ complaint.issueType }}
+        </h2>
+
+        <p class="description">
+          {{ complaint.description }}
+        </p>
+
+        <hr>
+
+        <div class="info-row">
+
+          <span class="icon">
+            📍
+          </span>
+
+          <strong>
+            Location:
+          </strong>
+
+          <span>
+            {{ complaint.location }}
+          </span>
+
+        </div>
+
+        <div class="info-row">
+
+          <span class="icon">
+            📅
+          </span>
+
+          <strong>
+            Reported On:
+          </strong>
+
+          <span>
+
+            {{
+              complaint.createdAt
+              | date:'medium'
+            }}
+
+          </span>
+
+        </div>
+
+        <hr>
+
+        <span
+
+          class="status"
+
+          [ngClass]="{
+
+            'pending':
+            complaint.status === 'Pending',
+
+            'progress':
+            complaint.status === 'In Progress',
+
+            'resolved':
+            complaint.status === 'Resolved'
+
+          }"
+
+        >
+
+          {{ complaint.status }}
+
+        </span>
+
+        <br><br>
+
+        <button
+          class="details-btn"
+        >
+
+          View Details
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,157 @@
+<div class="details-container">
+
+  <button
+    class="back-btn"
+    (click)="goBack()"
+  >
+    ← Back
+  </button>
+
+  <div class="details-card">
+
+    <img
+      *ngIf="complaint?.image"
+      [src]="complaint?.image"
+      class="complaint-image"
+    >
+
+    <div class="content">
+
+      <h1>
+        {{ complaint?.issueType }}
+      </h1>
+
+      <span class="status">
+        {{ complaint?.status }}
+      </span>
+
+      <div class="info">
+
+        <h3>
+          📍 Location
+        </h3>
+
+        <p>
+          {{ complaint?.location }}
+        </p>
+
+      </div>
+
+      <div class="info">
+
+        <h3>
+          📝 Description
+        </h3>
+
+        <p>
+          {{ complaint?.description }}
+        </p>
+
+      </div>
+
+      <div class="info">
+
+        <h3>
+          📅 Reported On
+        </h3>
+
+        <p>
+          {{
+            complaint?.createdAt
+            | date:'medium'
+          }}
+        </p>
+
+      </div>
+
+      <hr>
+
+      <div class="votes-section">
+
+        <h3>
+          👍 Votes:
+          {{ complaint?.votes || 0 }}
+        </h3>
+
+        <button
+          class="vote-btn"
+          (click)="voteComplaint()"
+        >
+          Upvote 👍
+        </button>
+
+        <button
+          class="unvote-btn"
+          (click)="unvoteComplaint()"
+        >
+          Remove Vote 👎
+        </button>
+
+      </div>
+
+      <hr>
+
+      <div class="comments-section">
+
+        <h2>
+          💬 Comments
+        </h2>
+
+        <input
+          type="text"
+          [(ngModel)]="commentText"
+          placeholder="Write a comment..."
+          class="comment-input"
+        >
+
+        <button
+          class="comment-btn"
+          (click)="addComment()"
+        >
+          Add Comment
+        </button>
+
+        <div
+          class="comment-box"
+          *ngFor="
+            let comment
+            of complaint?.comments;
+            let i = index
+          "
+        >
+
+          <strong>
+            {{ comment.user }}
+          </strong>
+
+          <p>
+            {{ comment.text }}
+          </p>
+
+          <small>
+            {{
+              comment.createdAt
+              | date:'short'
+            }}
+          </small>
+
+          <br><br>
+
+          <button
+            class="delete-comment-btn"
+            (click)="deleteComment(i)"
+          >
+            🗑 Delete
+          </button>
+
+          <hr>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

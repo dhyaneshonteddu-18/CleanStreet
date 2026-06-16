@@ -1,0 +1,141 @@
+<div class="dashboard">
+
+  <h1>Admin Dashboard</h1>
+
+  <div class="search-box">
+
+    <input
+      type="text"
+      placeholder="Search Issue Type..."
+      [(ngModel)]="searchText"
+    >
+
+    <select
+      [(ngModel)]="selectedStatus"
+    >
+
+      <option value="">
+        All Status
+      </option>
+
+      <option value="Pending">
+        Pending
+      </option>
+
+      <option value="In Progress">
+        In Progress
+      </option>
+
+      <option value="Resolved">
+        Resolved
+      </option>
+
+    </select>
+
+  </div>
+
+  <div class="stats">
+
+    <div class="card">
+      <h2>{{ totalComplaints }}</h2>
+      <p>Total Complaints</p>
+    </div>
+
+    <div class="card">
+      <h2>{{ pendingCount }}</h2>
+      <p>Pending</p>
+    </div>
+
+    <div class="card">
+      <h2>{{ progressCount }}</h2>
+      <p>In Progress</p>
+    </div>
+
+    <div class="card">
+      <h2>{{ resolvedCount }}</h2>
+      <p>Resolved</p>
+    </div>
+
+  </div>
+
+  <div
+    class="complaint-card"
+    *ngFor="let complaint of filteredComplaints()"
+  >
+
+    <h2>
+      {{ complaint.issueType }}
+    </h2>
+
+    <p>
+      {{ complaint.description }}
+    </p>
+
+    <p>
+      📍 {{ complaint.location }}
+    </p>
+
+    <img
+      *ngIf="complaint.image"
+      [src]="complaint.image"
+      alt="Issue Image"
+    >
+
+    <p class="status">
+
+      Status:
+
+      <strong>
+        {{ complaint.status }}
+      </strong>
+
+    </p>
+
+    <select
+
+      [value]="complaint.status"
+
+      (change)="
+        changeStatus(
+          complaint,
+          $event
+        )
+      "
+
+    >
+
+      <option>
+        Pending
+      </option>
+
+      <option>
+        In Progress
+      </option>
+
+      <option>
+        Resolved
+      </option>
+
+    </select>
+
+    <br>
+
+    <button
+
+      class="delete-btn"
+
+      (click)="
+        deleteComplaint(
+          complaint._id
+        )
+      "
+
+    >
+
+      Delete Complaint
+
+    </button>
+
+  </div>
+
+</div>

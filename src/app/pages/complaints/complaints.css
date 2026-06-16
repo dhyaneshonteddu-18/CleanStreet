@@ -1,0 +1,197 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:#f4f7fb;
+}
+
+.complaints-container{
+  min-height:100vh;
+  padding:50px;
+  background:#f4f7fb;
+}
+
+/* Heading */
+.heading{
+  text-align:center;
+  margin-bottom:45px;
+}
+
+.heading h1{
+  font-size:58px;
+  color:#2563eb;
+  font-weight:700;
+}
+
+.subtitle{
+  color:#64748b;
+  font-size:20px;
+  margin-top:10px;
+}
+
+/* Grid */
+.complaints-grid{
+  display:grid;
+
+  grid-template-columns:
+  repeat(auto-fit,minmax(420px,1fr));
+
+  gap:30px;
+}
+
+/* Card */
+.complaint-card{
+  background:white;
+
+  border-radius:26px;
+
+  overflow:hidden;
+
+  box-shadow:
+  0 8px 22px
+  rgba(0,0,0,0.08);
+
+  transition:0.3s;
+
+  cursor:pointer;
+}
+
+.complaint-card:hover{
+  transform:
+  translateY(-5px);
+}
+
+/* Image */
+.complaint-image{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+}
+
+/* Content */
+.card-content{
+  padding:28px;
+}
+
+/* Title */
+.issue-title{
+  color:#2563eb;
+  font-size:32px;
+  font-weight:700;
+  margin-bottom:18px;
+}
+
+/* Description */
+.description{
+  font-size:20px;
+  color:#475569;
+  line-height:1.6;
+  margin-bottom:22px;
+}
+
+/* Divider */
+hr{
+  border:none;
+  border-top:
+  1px solid #e5e7eb;
+
+  margin:22px 0;
+}
+
+/* Info Row */
+.info-row{
+  display:flex;
+  align-items:center;
+  gap:14px;
+
+  margin-bottom:22px;
+
+  font-size:18px;
+  color:#374151;
+}
+
+.info-row strong{
+  color:#111827;
+}
+
+/* Icons */
+.icon{
+  font-size:24px;
+}
+
+/* Status */
+.status{
+  display:inline-block;
+
+  background:#fff3cd;
+  color:#d97706;
+
+  padding:12px 24px;
+
+  border-radius:30px;
+
+  font-size:18px;
+  font-weight:600;
+}
+
+.status{
+
+  display:inline-block;
+
+  padding:10px 18px;
+
+  border-radius:25px;
+
+  font-weight:600;
+
+  margin-top:20px;
+}
+
+/* Pending */
+.pending{
+
+  background:#fef3c7;
+
+  color:#d97706;
+}
+
+/* In Progress */
+.progress{
+
+  background:#dbeafe;
+
+  color:#2563eb;
+}
+
+/* Resolved */
+.resolved{
+
+  background:#dcfce7;
+
+  color:#16a34a;
+}
+
+.details-btn {
+
+  background: #2563eb;
+
+  color: white;
+
+  border: none;
+
+  padding: 10px 18px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+}
+
+.details-btn:hover {
+
+  opacity: 0.9;
+
+}

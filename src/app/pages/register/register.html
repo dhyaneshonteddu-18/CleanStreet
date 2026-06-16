@@ -1,0 +1,107 @@
+<div class="register-container">
+
+  <div class="register-card">
+
+    <h1>Create Account</h1>
+
+    <p class="subtitle">
+      Join CleanStreet
+    </p>
+
+    <form
+      [formGroup]="registerForm"
+      (ngSubmit)="register()"
+    >
+
+      <input
+        type="text"
+        placeholder="Full Name"
+        formControlName="name"
+      >
+
+      <input
+        type="text"
+        placeholder="Username"
+        formControlName="username"
+      >
+
+      <input
+        type="email"
+        placeholder="Email"
+        formControlName="email"
+      >
+
+      <input
+        type="text"
+        placeholder="Phone Number"
+        formControlName="phone"
+      >
+
+      <div class="password-box">
+
+        <input
+          [type]="showPassword ? 'text' : 'password'"
+          placeholder="Password"
+          formControlName="password"
+        >
+
+        <span
+          class="eye-icon"
+          (click)="togglePassword()"
+        >
+          👁
+        </span>
+
+      </div>
+
+      <small class="hint">
+        Password must contain minimum 6 letters
+      </small>
+
+      <div class="password-box">
+
+        <input
+          [type]="showConfirmPassword ? 'text' : 'password'"
+          placeholder="Confirm Password"
+          formControlName="confirmPassword"
+        >
+
+        <span
+          class="eye-icon"
+          (click)="toggleConfirmPassword()"
+        >
+          👁
+        </span>
+
+      </div>
+
+      <p
+        class="error"
+        *ngIf="errorMsg"
+      >
+        {{ errorMsg }}
+      </p>
+
+      <button
+        type="submit"
+      >
+        Register
+      </button>
+
+    </form>
+
+    <p class="bottom-text">
+
+      Already have an account?
+
+      <a
+        routerLink="/login"
+      >
+        Login
+      </a>
+
+    </p>
+
+  </div>
+
+</div>

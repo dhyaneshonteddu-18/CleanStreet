@@ -1,0 +1,53 @@
+<div *ngIf="loading">
+
+  Loading Complaints...
+
+</div>
+
+<div *ngIf="!loading">
+
+  <div
+    class="complaint-card"
+    *ngFor="
+      let complaint
+      of complaints
+    "
+  >
+
+    <h2>
+      {{ complaint.issueType }}
+    </h2>
+
+    <p>
+      {{ complaint.description }}
+    </p>
+
+    <p>
+      📍 {{ complaint.location }}
+    </p>
+
+    <p>
+
+      Status:
+
+      <strong>
+        {{ complaint.status }}
+      </strong>
+
+    </p>
+
+    <img
+
+      *ngIf="
+        complaint.image
+      "
+
+      [src]="
+        complaint.image
+      "
+
+    >
+
+  </div>
+
+</div>

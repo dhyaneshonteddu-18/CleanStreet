@@ -1,0 +1,48 @@
+.container {
+
+  max-width: 1000px;
+
+  margin: auto;
+
+  padding: 20px;
+
+}
+
+.container h1 {
+
+  text-align: center;
+
+  color: #2563eb;
+
+}
+
+.complaint-card {
+
+  background: white;
+
+  padding: 20px;
+
+  margin-bottom: 20px;
+
+  border-radius: 10px;
+
+  box-shadow:
+    0 2px 10px
+    rgba(
+      0,
+      0,
+      0,
+      0.1
+    );
+
+}
+
+.complaint-card img {
+
+  width: 250px;
+
+  border-radius: 10px;
+
+  margin-top: 10px;
+
+}

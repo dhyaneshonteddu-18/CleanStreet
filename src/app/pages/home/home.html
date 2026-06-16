@@ -1,0 +1,76 @@
+<nav class="navbar">
+  <div class="logo">CleanStreet</div>
+
+  <div class="nav-links">
+    <a routerLink="/">Home</a>
+    <a routerLink="/dashboard">Dashboard</a>
+    <a routerLink="/report">Report Issue</a>
+    <a routerLink="/complaints">View Complaints</a>
+    <a routerLink="/admin-dashboard">Admin</a>
+    <a routerLink="/profile">Profile</a>
+    <a routerLink="/my-complaints">My Complaints</a>
+    <button
+  class="logout-btn"
+  (click)="logout()"
+>
+  Logout
+</button>
+
+  </div>
+
+  <div class="auth-buttons">
+    <button routerLink="/login">Login</button>
+    <button routerLink="/register" class="register-btn">
+      Register
+    </button>
+  </div>
+</nav>
+
+<section class="hero">
+  <h1>Make Your City Cleaner & Smarter</h1>
+
+  <p>
+    Report civic issues, track progress, and help build
+    a better community together.
+  </p>
+
+  <div class="hero-buttons">
+    <button routerLink="/report">
+      Report an Issue
+    </button>
+
+    <button routerLink="/complaints" class="secondary-btn">
+      View Reports
+    </button>
+  </div>
+</section>
+
+<section class="features">
+  <h2>How CleanStreet Works</h2>
+  <p>Simple steps to make a difference in your community</p>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>📍 Report Issues</h3>
+      <p>
+        Easily report civic problems with photos and location.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>📈 Track Progress</h3>
+      <p>
+        Monitor issue status in real-time.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>🤝 Community Impact</h3>
+      <p>
+        Vote and comment on complaints.
+      </p>
+    </div>
+
+  </div>
+</section>
